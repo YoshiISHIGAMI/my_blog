@@ -1,13 +1,11 @@
 <div class="col-md-8 col-md-offset-2">
 <h2 id="title"><%= @post.title %></h2>
 
-<p id="category">カテゴリ ：<%= @post.category %></p>
+<p id="category">カテゴリ ：<%= find_category_title(@post.category_id) %></p>
 
 <div id="body">
   <%= simple_format(@post.body) %>
 </div>
-
-<p id="category"><%= @post.category %></p>
 
 <div class="text-center">
 <%= link_to '編集する', edit_post_path, :class => 'btn btn-default' %>

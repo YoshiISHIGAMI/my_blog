@@ -11,7 +11,7 @@
   </p>
 
   <p>カテゴリ:<br>
-  <%= f.text_field :category, :class => 'form-control' %>
+  <%= f.collection_select(:category_id, Category.all, :id, :title, class: "form-control") %>
   </p>
 
   <p class="text-center"><%= f.submit '記事を保存', :class => 'btn btn-default' %></p>
