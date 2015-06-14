@@ -1,13 +1,17 @@
+<div class="col-md-8 col-md-offset-2">
+<h2 id="title"><%= @post.title %></h2>
 
-<h1 id="title">
-  <%= @post.title %>
-</h1>
+<p id="category">カテゴリ ：<%= @post.category %></p>
 
 <div id="body">
-  <%= @post.body %>
+  <%= simple_format(@post.body) %>
 </div>
 
 <p id="category"><%= @post.category %></p>
 
-<%= link_to '編集する', edit_post_path %>
-<%= link_to '削除する', post_path, method: :delete  %>
+<div class="text-center">
+<%= link_to '編集する', edit_post_path, :class => 'btn btn-default' %>
+<%= link_to '削除する', post_path, method: :delete, :class => 'btn btn-danger' %>
+</div>
+
+</div>
