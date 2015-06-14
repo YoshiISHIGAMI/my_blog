@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
   def index
-    
+    @posts = Post.all
   end
 
   def show
-    
+    @post = Post.find(params[:id])
   end
 
   def new
@@ -14,15 +14,17 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.save
-    redirect_to "/posts/#{@post:id}/"
+    redirect_to "/posts/#{@post.id}/"
   end
 
   def edit
-    
+    @post = Post.find(params[:id])
   end
 
   def update
-    
+    @post = Post.find(params[:id])
+    @post.update_attributes(post_params)
+    redirect_to "/posts/#{@post.id}"
   end
 
   def delete
@@ -30,7 +32,7 @@ class PostsController < ApplicationController
   end
 
   private
-  def post-params
+  def post_params
     params.require(:post).permit(
       :title,
       :body,

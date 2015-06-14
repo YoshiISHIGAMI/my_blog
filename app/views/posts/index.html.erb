@@ -1,4 +1,9 @@
 <h1>記事一覧</h1>
 <ul>
-  <li><a href=""><%= @post.title %></a></li>
+  <% @posts.each do |post| %>
+  <li><a href="/posts/<%= post.id %>"><%= post.title %></a></li>
+  <% end -%>
 </ul>
+
+<p><a href="/posts/new">記事を作成</a></p>
+<p><a href="/posts/new">記事を削除</a></p>
