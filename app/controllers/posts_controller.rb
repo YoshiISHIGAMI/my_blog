@@ -27,8 +27,10 @@ class PostsController < ApplicationController
     redirect_to "/posts/#{@post.id}"
   end
 
-  def delete
-    
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to "/posts/"
   end
 
   private

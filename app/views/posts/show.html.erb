@@ -10,3 +10,5 @@
 <p id="category"><%= @post.category %></p>
 
 <p><a href="/posts/<%= @post.id %>/edit">編集する</a></p>
+<%= link_to '編集する', edit_post_path %>
+<%= link_to '削除する', post_path, method: :delete  %>
