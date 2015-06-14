@@ -2,13 +2,36 @@
 <html>
 <head>
   <title>MyBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
 <body>
+<header>
+<div class="row">
+  <div class="col-md-10">
+    <h1><a href="/posts/">My Blog</a></h1>
+  </div>
 
-<%= yield %>
+  <div class="col-md-2">
+    <%= link_to '新規記事を作成', new_post_path %>
+  </div>
+</div>
+  
+
+</header>
+<div class="container">
+  <div class="row">
+    <%= yield %>
+  </div>
+</div>
 
 </body>
 </html>

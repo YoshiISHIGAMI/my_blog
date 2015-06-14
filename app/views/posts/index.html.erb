@@ -1,9 +1,12 @@
-<h1>記事一覧</h1>
-<ul>
-  <% @posts.each do |post| %>
-  <li><a href="/posts/<%= post.id %>"><%= post.title %></a></li>
-  <% end -%>
-</ul>
+<div class="col-md-8">
+  <h1>記事一覧</h1>
+  <ul class="list-group">
+    <% @posts.each do |post| %>
+    <li class="list-group-item"><a href="/posts/<%= post.id %>"><%= post.title %></a></li>
+    <% end -%>
+  </ul>
+</div>
 
-<p><a href="/posts/new">記事を作成</a></p>
-<p><a href="/posts/new">記事を削除</a></p>
+<div class="col-md-4">
+  右ナビ
+</div>
